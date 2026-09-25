@@ -1,0 +1,12 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Slugic;Slaven;;;
+FN:Slaven Slugic
+TITLE:Engineering Leader · Builder · Investor
+TEL;TYPE=CELL,VOICE:+1 (786) 796-7801
+EMAIL;TYPE=INTERNET,PREF:slugics@gmail.com
+ADR;TYPE=HOME:;;;Miami;FL;;USA
+URL;TYPE=LinkedIn:https://www.linkedin.com/in/slavenslugic
+URL;TYPE=GitHub:https://github.com/sslugic
+NOTE:Engineering leader\, AI product builder\, real estate and angel investor.
+END:VCARD
