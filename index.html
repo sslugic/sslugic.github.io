@@ -223,6 +223,9 @@
 
   /* projects */
   .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  /* An odd card out spans the row so the grid stays even. */
+  .projects > .proj:last-child:nth-child(odd) { grid-column: 1 / -1; }
+  .projects > .proj:last-child:nth-child(odd) .shot { aspect-ratio: 21/9; }
   .proj { position: relative; display: flex; flex-direction: column; border-radius: var(--radius-lg); overflow: hidden;
     background: var(--card); border: var(--border-w) solid var(--line); box-shadow: var(--card-shadow);
     transition: transform .35s cubic-bezier(.2,.8,.2,1), border-color .3s; }
@@ -641,6 +644,15 @@
           <div class="head"><h3>The Whole Day</h3><span class="kind">News that ends</span></div>
           <p>One page of science going right. Every story is a single sourced paragraph, the whole edition reads in about ten minutes, and there's a real finish line — no infinite scroll. Published daily in thirteen languages.</p>
           <div class="go">thewhole.day <span>→</span></div>
+        </div>
+      </a>
+
+      <a class="proj reveal" style="--accent:#9cff2e" href="https://sslugic.github.io/pulse-site/" target="_blank" rel="noopener">
+        <div class="shot" style="background:#0b0c0d"><img src="assets/pulse.webp" alt="Pulse: log it, stack XP, run the block. An AI fitness coach styled like an 80s street arcade" loading="lazy" style="object-position:center"></div>
+        <div class="body">
+          <div class="head"><h3>Pulse</h3><span class="kind">AI fitness arcade</span></div>
+          <p>An iPhone fitness coach built like an 80s street arcade. Talk, type or snap a photo to log meals and workouts, and the AI handles calories, macros and plans. Every log earns XP toward 15 Street Crew ranks, with daily quests, brain-game chests and squad challenges against friends. In public beta on TestFlight.</p>
+          <div class="go">sslugic.github.io/pulse-site <span>→</span></div>
         </div>
       </a>
 
