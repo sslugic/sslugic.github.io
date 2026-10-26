@@ -280,6 +280,20 @@
   .book h3 { font: 400 clamp(40px, 5vw, 60px)/1 var(--serif); letter-spacing: -.01em; margin: 14px 0 14px; }
   .book h3 i { background: var(--em-bg); -webkit-background-clip: text; background-clip: text; color: transparent; }
   .book p { color: var(--muted); max-width: 440px; }
+  a.book { display: grid; grid-template-columns: 170px 1fr; gap: 32px; align-items: center; justify-content: stretch; transition: border-color .3s, transform .35s cubic-bezier(.2,.8,.2,1); }
+  a.book:hover { transform: translateY(var(--lift)); border-color: var(--a1); }
+  .book .cover { perspective: 900px; }
+  .book .cover img { width: 100%; height: auto; border-radius: 3px 6px 6px 3px; display: block;
+    box-shadow: -6px 0 0 -2px rgba(0,0,0,.25) inset, 0 24px 40px -12px rgba(0,0,0,.65), 0 0 0 1px rgba(255,255,255,.06);
+    transform: rotateY(-14deg) rotateX(2deg); transform-origin: left center; transition: transform .5s cubic-bezier(.2,.8,.2,1); }
+  a.book:hover .cover img { transform: rotateY(-4deg); }
+  .book .sub { font: 500 12px var(--mono); color: var(--muted); text-transform: uppercase; letter-spacing: .12em; margin: -4px 0 14px; }
+  .book .book-meta { display: flex; gap: 14px; margin-top: 16px; font: 500 12px var(--mono); color: var(--faint); }
+  .book .buy { display: inline-flex; gap: 6px; margin-top: 18px; font-weight: 600; font-size: 14px; color: var(--text); }
+  .book .buy span { transition: transform .25s; }
+  a.book:hover .buy span { transform: translateX(4px); }
+  [data-theme="forge"] .book .sub, [data-theme="forge"] .book .book-meta { color: rgba(0,0,0,.65); }
+  [data-theme="forge"] .book .buy { color: #0a0a0a; }
   [data-theme="forge"] .book { color: #0a0a0a; border-color: var(--a1); }
   [data-theme="forge"] .book p { color: rgba(0,0,0,.75); }
   [data-theme="noir"] .book .k { color: #fdba74; }
@@ -314,7 +328,9 @@
   [data-theme="terminal"] h1::before { content: "> "; color: var(--a1); }
   [data-theme="terminal"] .lede { font-size: 16px; }
   [data-theme="terminal"] h2 { font-size: clamp(28px, 4vw, 42px); }
-  [data-theme="terminal"] .book h3 { font-family: var(--mono); font-size: clamp(30px, 4vw, 44px); }
+  [data-theme="terminal"] .book h3 { font-family: var(--mono); font-size: clamp(26px, 3vw, 36px); }
+  .book-body { min-width: 0; }
+  .book h3 { overflow-wrap: anywhere; }
   [data-theme="terminal"] .book .orb { border-radius: 4px; }
   [data-theme="terminal"] .book .orb::after { border-radius: 2px; }
 
@@ -442,6 +458,8 @@
     .hero { padding: 80px 0 60px; }
     .facts { grid-template-columns: 1fr; }
     .book { padding: 28px; }
+    a.book { grid-template-columns: 1fr; gap: 22px; }
+    .book .cover { max-width: 150px; }
     .proj .body { padding: 22px; }
   }
 </style>
@@ -694,12 +712,17 @@
     <div class="eyebrow reveal">05 — Publications</div>
     <h2 class="reveal">Writing <em>&amp; ideas.</em></h2>
     <div class="pubs">
-      <div class="book reveal">
-        <div class="orb"></div>
-        <div class="k">Publication</div>
-        <h3>The Art of <i>Artificial Intelligence</i></h3>
-        <p>On how AI is changing the craft of building software, and what it means for the engineers and teams doing the building.</p>
-      </div>
+      <a class="book reveal" href="https://www.amazon.com/dp/B0HDH4YDHR" target="_blank" rel="noopener">
+        <div class="cover"><img src="assets/book-art-of-ai.jpg" alt="Cover of The Art of Artificial Intelligence: Creativity in the Age of Machines by Slaven Slugic" width="734" height="1100" loading="lazy"></div>
+        <div class="book-body">
+          <div class="k">Book · Paperback · 2026</div>
+          <h3>The Art of <i>Artificial Intelligence</i></h3>
+          <div class="sub">Creativity in the Age of Machines</div>
+          <p>A practical, no-hype guide to working with AI as a solo builder or creator. You don't have to master every skill yourself; you learn to direct the work.</p>
+          <div class="book-meta"><span>227 pages</span><span>Aug 2026</span></div>
+          <span class="buy">Get it on Amazon <span aria-hidden="true">→</span></span>
+        </div>
+      </a>
       <div class="articles">
         <div class="article reveal">
           <div class="k">DZone Research Guides</div>
