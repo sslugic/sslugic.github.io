@@ -223,6 +223,12 @@
 
   /* projects */
   .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  /* An odd card out spans the row and lays out side by side, so the grid never ends on a gap. */
+  @media (min-width: 861px) {
+    .projects > .proj:last-child:nth-child(odd) { grid-column: 1 / -1; flex-direction: row; }
+    .projects > .proj:last-child:nth-child(odd) .shot { flex: 0 0 52%; aspect-ratio: 16/10; border-bottom: 0; border-right: var(--border-w) solid var(--line); }
+    .projects > .proj:last-child:nth-child(odd) .body { justify-content: center; }
+  }
   /* An odd card out spans the row so the grid stays even. */
   .projects > .proj:last-child:nth-child(odd) { grid-column: 1 / -1; }
   .projects > .proj:last-child:nth-child(odd) .shot { aspect-ratio: 21/9; }
@@ -635,6 +641,15 @@
           <div class="head"><h3>Testera</h3><span class="kind">Agentic QA</span></div>
           <p>Agentic test management. Testera discovers tests, heals failures, files tickets and opens draft PRs — humans always approve the merge. Free core QA plus MCP, and DevHunt's #1 Tool of the Week.</p>
           <div class="go">testera.io <span>→</span></div>
+        </div>
+      </a>
+
+      <a class="proj reveal" style="--accent:#2dd4bf" href="https://probe.testera.io" target="_blank" rel="noopener">
+        <div class="shot" style="background:#0b0d0c"><img src="assets/testera-probe.jpg" alt="Testera Probe: a passing checkout API chain with its agent log, collections and request canvas" loading="lazy"></div>
+        <div class="body">
+          <div class="head"><h3>Testera Probe</h3><span class="kind">API workbench</span></div>
+          <p>An agent-first API workbench. Chain requests on a canvas, pass values from one step to the next, poll until a condition holds and assert on status, JSON and schemas, or just ask the agent to build and explain the test. Catches vendor webhooks, imports OpenAPI and Postman, and runs in CI with JUnit output. Try the live demo without signing up.</p>
+          <div class="go">probe.testera.io <span>→</span></div>
         </div>
       </a>
 
