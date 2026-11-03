@@ -194,17 +194,11 @@
   h2 em { font-family: var(--em-font); font-style: var(--em-style); font-weight: var(--em-weight); color: var(--h2-em); }
   [data-theme="forge"] section { border-top: 2px solid var(--line); }
 
-  /* journey */
-  .journey { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  .stop { position: relative; padding: 28px; border-radius: var(--radius); background: var(--card); border: var(--border-w) solid var(--line); overflow: hidden; box-shadow: var(--card-shadow); }
-  .stop .yr { font: 500 13px var(--mono); color: var(--faint); }
-  .stop h3 { font-size: 24px; letter-spacing: -.02em; margin: 8px 0 8px; }
-  [data-theme="noir"] .stop h3 { font-size: 34px; }
-  .stop p { color: var(--muted); font-size: 15px; }
-  .stop .big { position: absolute; right: -8px; bottom: -34px; font: italic 400 130px/1 var(--serif); color: var(--ghost); pointer-events: none; }
-  .stop.now { background: linear-gradient(var(--bg-2), var(--bg-2)) padding-box, var(--grad) border-box; border: var(--border-w) solid transparent; }
-  [data-theme="forge"] .stop.now { background: var(--a1); color: #0a0a0a; border-color: var(--a1); }
-  [data-theme="forge"] .stop.now p, [data-theme="forge"] .stop.now .yr { color: rgba(0,0,0,.75); }
+  /* about */
+  .about { max-width: 760px; }
+  .about p { font-size: clamp(18px, 2vw, 21px); color: var(--muted); line-height: 1.65; }
+  .about .chips { margin-top: 22px; gap: 8px; }
+  .about .chip { font-size: 13px; padding: 6px 12px; }
 
   /* experience */
   .xp { display: flex; flex-direction: column; border-top: var(--border-w) solid var(--line); }
@@ -447,7 +441,7 @@
 
   @media (max-width: 860px) {
     .facts { grid-template-columns: repeat(2, 1fr); }
-    .journey, .projects, .pubs { grid-template-columns: 1fr; }
+    .projects, .pubs { grid-template-columns: 1fr; }
     .job { grid-template-columns: 48px 1fr; }
     .job .when { grid-column: 2; text-align: left; order: -1; }
     .job .when b { display: inline; margin-right: 8px; }
@@ -523,26 +517,12 @@
   </header>
 
   <section id="about">
-    <div class="eyebrow reveal">01 — Background</div>
-    <h2 class="reveal">From the Balkans <em>to the Pacific Northwest, to Miami.</em></h2>
-    <div class="journey">
-      <div class="stop reveal">
-        <div class="yr">The beginning</div>
-        <h3>Ex-Yugoslavia</h3>
-        <p>Born and raised in the former Yugoslavia, where the story starts.</p>
-        <div class="big">YU</div>
-      </div>
-      <div class="stop reveal">
-        <div class="yr">1998 → 2025</div>
-        <h3>Seattle</h3>
-        <p>Immigrated to the USA in 1998 and spent most of my life in Seattle. Earned a B.S. in Computer Science from Western Washington University, then built a career at Microsoft, Expedia and Smartsheet.</p>
-        <div class="big">SEA</div>
-      </div>
-      <div class="stop now reveal">
-        <div class="yr">Now</div>
-        <h3>Miami</h3>
-        <p>Recently moved to Miami. Leading engineering in stablecoin and payments infrastructure, and shipping my own products at night.</p>
-        <div class="big">MIA</div>
+    <div class="eyebrow reveal">01 — About</div>
+    <h2 class="reveal">Based in <em>Miami.</em></h2>
+    <div class="about reveal">
+      <p>I live in Miami and spend as much time outside as I can: at the beach, out walking or running, training, and traveling whenever there's a chance. The rest of the time I'm building apps and pushing AI to see how far it can really go.</p>
+      <div class="chips">
+        <span class="chip">Beach</span><span class="chip">Walking</span><span class="chip">Running</span><span class="chip">Training</span><span class="chip">Travel</span><span class="chip">Building apps</span><span class="chip">Pushing AI</span>
       </div>
     </div>
   </section>
